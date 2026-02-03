@@ -1,0 +1,32 @@
+<div>
+  <h2>Listado de Matrículas Vehiculares</h2>
+
+  <table border="1">
+    <tr>
+      <th>Placa</th>
+      <th>Propietario</th>
+      <th>Marca</th>
+      <th>Fabricación</th>
+      <th>Valor Comercial</th>
+      <th>Impuesto</th>
+      <th>Código Revisión</th>
+    </tr>
+    <tr *ngFor="let matricula of matriculas"
+        [style.border]="matricula.impuesto > 500 ? '3px solid orange' : ''">
+      <td>{{ matricula.placa }}</td>
+      <td>{{ matricula.propietario }}</td>
+      <td>{{ matricula.marca }}</td>
+      <td>{{ matricula.fabricacion }}</td>
+      <td>${{ matricula.valor_comercial | number:'1.2-2' }}</td>
+      <td>
+        @if (matricula.impuesto > 500) {
+          <span style="color: orange;">!!!ADVERTENCIA !!!</span>
+        }
+        ${{ matricula.impuesto | number:'1.2-2' }}
+      </td>
+      <td>{{ matricula.codigo_revision }}</td>
+    </tr>
+  </table>
+
+  <p>{{ mensaje }}</p>
+</div>

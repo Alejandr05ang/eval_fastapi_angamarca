@@ -1,0 +1,63 @@
+<div>
+  <h2>Registrar Matrícula Vehicular</h2>
+
+  <form (ngSubmit)="guardar()">
+    <div>
+      <label for="placa">Placa: </label>
+      <input
+        type="text"
+        id="placa"
+        [(ngModel)]="placa"
+        name="placa"
+        required>
+    </div>
+
+    <div>
+      <label for="propietario">Propietario: </label>
+      <input
+        type="text"
+        id="propietario"
+        [(ngModel)]="propietario"
+        name="propietario"
+        required>
+    </div>
+
+    <div>
+      <label for="marca">Marca: </label>
+      <input
+        type="text"
+        id="marca"
+        [(ngModel)]="marca"
+        name="marca"
+        required>
+    </div>
+
+    <div>
+      <label for="fabricacion">Fabricación: </label>
+      <input
+        type="number"
+        id="fabricacion"
+        [(ngModel)]="fabricacion"
+        name="fabricacion"
+        required>
+    </div>
+
+    <div>
+      <label for="valor_comercial">Valor Comercial: </label>
+      <input
+        type="number"
+        id="valor_comercial"
+        [(ngModel)]="valor_comercial"
+        name="valor_comercial"
+        min="0"
+        required>
+    </div>
+
+    <br>
+
+    <button type="button" (click)="guardar()">Guardar</button>
+    <button type="button" (click)="limpiar()">Limpiar</button>
+  </form>
+
+  <p>{{ mensaje }}</p>
+</div>
